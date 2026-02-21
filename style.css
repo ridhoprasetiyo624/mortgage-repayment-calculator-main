@@ -1,0 +1,361 @@
+     /* ============================================================
+         ORIGINAL CSS (tidak diubah sama sekali)
+      ============================================================ */
+      :root {
+        --Lime: hsl(61, 70%, 52%);
+        --Red: hsl(4, 69%, 50%);
+        --White: hsl(0, 0%, 100%);
+        --Slate-100: hsl(202, 86%, 94%);
+        --Slate-300: hsl(203, 41%, 72%);
+        --Slate-500: hsl(200, 26%, 54%);
+        --Slate-700: hsl(200, 24%, 40%);
+        --Slate-900: hsl(202, 55%, 16%);
+      }
+
+      .attribution { font-size: 11px; text-align: center; }
+      .attribution a { color: hsl(228, 45%, 44%); }
+
+      html { scrollbar-width: 0px; scroll-behavior: smooth; }
+      html::-webkit-scrollbar { display: none; }
+
+      body {
+        background-color: var(--Slate-100);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        color: var(--Slate-700);
+        font-weight: 400;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        width: 150vh;
+        height: fit-content;
+        border-radius: 16px;
+        background-color: var(--White);
+        padding: 0;
+        margin: 10vh 10vh;
+        max-width: 1366px;
+      }
+
+      .left-container {
+        background-color: var(--White);
+        height: 80vh;
+        width: 50%;
+        padding: 22px;
+      }
+
+      .result-container {
+        padding: 22px;
+        background-color: var(--Slate-900);
+        height: 80vh;
+        width: 50%;
+        border-bottom-left-radius: 100px;
+        color: var(--White);
+      }
+
+      .header { display: flex; justify-content: space-between; align-items: center; }
+      .header h1 { color: var(--Slate-900); }
+      .header a { color: var(--Slate-700); font-size: 14px; }
+      .header a:hover { color: var(--Slate-900); }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 0;
+        margin-bottom: 20px;
+        border: none;
+      }
+      .form-group label { font-size: 12px; color: var(--Slate-700); margin-bottom: 10px; }
+
+      .input-group {
+        position: relative;
+        display: flex;
+        align-items: stretch;
+        border: 1px solid var(--Slate-700);
+        border-radius: 6px;
+        overflow: hidden;
+      }
+      .input-group input {
+        flex: 1;
+        border: none;
+        height: 48px;
+        padding: 0 15px;
+        width: 100%;
+        font-size: 16px;
+        font-weight: 700;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        outline: none;
+        color: var(--Slate-900);
+      }
+
+      #amount {
+        width: 90%;
+        height: 48px;
+        border-radius: 6px;
+        padding-left: 60px;
+        border: none;
+        font-size: 17px;
+      }
+
+      .prefix {
+        position: absolute;
+        font-weight: 600;
+        color: var(--Slate-700);
+        background-color: var(--Slate-300);
+        width: 46px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px none 1px 1px solid var(--Slate-900);
+        margin-top: 1px;
+        margin-left: 0.5px;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+        border: 1px 0 1px 1px solid var(--Slate-900);
+      }
+
+      .term-interest { display: flex; gap: 20px; width: 100%; }
+      .term-interest .form-group { flex: 1; }
+
+      .prefix, .suffix {
+        background-color: var(--Slate-100);
+        color: var(--Slate-700);
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        padding: 0 16px;
+        font-weight: bold;
+      }
+
+      .form-group { border: none; }
+
+      .radio-card {
+        border: 1px solid var(--Slate-900);
+        align-items: center;
+        display: flex;
+        justify-content: left;
+        height: 44px;
+        border-radius: 6px;
+        padding-left: 15px;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+      .radio-card input { transform: scale(1.5); }
+      .section-label { margin-bottom: 10px; font-size: 14px; }
+      .radio-card span { padding-left: 7px; font-weight: 800; font-size: 13px; color: var(--Slate-900); }
+
+      .btn-primary {
+        background-color: var(--Lime);
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        border: none;
+        border-radius: 50px;
+        padding: 10px 20px;
+        text-align: center;
+        font-weight: 700;
+        display: flex;
+        margin-bottom: 4vh;
+        cursor: pointer;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        gap: 8px;
+      }
+      .btn-primary span { margin-left: 10px; }
+
+      .result-container {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        display: flex;
+      }
+      .result-container p { color: var(--Slate-300); font-weight: 400; font-size: 12px; }
+
+      .hidden { display: none; }
+
+      .complete {
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: left;
+        top: 10px;
+        padding: 20px;
+      }
+
+      .result-box {
+        display: block;
+        background-color: #000000;
+        width: 90%;
+        height: fit-content;
+        padding: 4vh;
+        border-top: 5px solid var(--Lime);
+        border-radius: 10px;
+      }
+      .result-box h1 { color: var(--Lime); }
+      .result-box hr { background-color: var(--Slate-700); border: 1px solid var(--Slate-700); }
+
+      #amount, .term-interest:hover { border-color: var(--Slate-900); border-width: 2px; }
+      .radio-card:hover { border-color: var(--Lime); }
+      .btn-primary:hover { background-color: #ebee97; cursor: pointer; }
+
+      .alert { color: var(--Red); font-size: 10px; }
+
+      .input-group.is-error { border: 2px solid var(--Red); }
+      .input-group.is-error .prefix,
+      .input-group.is-error .suffix { background-color: var(--Red); color: var(--White); margin-top: 0px; }
+
+      .radio-error { border: 2px solid var(--Red); }
+      .alert.active { display: block; }
+
+      .input-group { border: 1px solid var(--Slate-700); }
+      .input-group:focus-within { border-color: var(--Slate-100); }
+      .input-group.is-error { border-color: var(--Red); }
+      .input-group.is-error:focus-within { border-color: var(--Red); }
+
+      /* ============================================================
+         TAMBAHAN CSS: RESPONSIVITAS MOBILE
+         Tidak mengubah tampilan desktop sama sekali.
+         Hanya aktif di layar <= 768px
+      ============================================================ */
+
+      @media screen and (max-width: 768px) {
+        body {
+          min-height: 100vh;
+          justify-content: flex-start;
+          background-color: var(--Slate-100);
+        }
+
+        /* Container jadi single column */
+        .container {
+          flex-direction: column;
+          width: 100%;
+          max-width: 100%;
+          height: auto;
+          border-radius: 0;
+          margin: 0;
+        }
+
+        /* Form panel: full width, tinggi auto */
+        .left-container {
+          width: 100%;
+          height: auto;
+          padding: 24px 20px 20px;
+        }
+
+        /* Result panel: full width, tinggi auto, radius kiri bawah hilang */
+        .result-container {
+          width: 100%;
+          height: auto;
+          min-height: 300px;
+          border-bottom-left-radius: 0;
+          padding: 32px 20px;
+        }
+
+        /* Term & Interest Rate: tetap sejajar di tablet */
+        .term-interest {
+          flex-direction: row;
+          gap: 16px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        body {
+          background-color: var(--White);
+          padding: 0;
+        }
+
+        .container {
+          box-shadow: none;
+        }
+
+        .left-container {
+          padding: 20px 16px 16px;
+        }
+
+        .header h1 {
+          font-size: 20px;
+        }
+
+        /* Di mobile kecil, Term & Interest stack vertikal */
+        .term-interest {
+          flex-direction: column;
+          gap: 0;
+        }
+
+        /* Tombol full width */
+        .btn-primary {
+          width: 100%;
+          justify-content: center;
+          padding: 14px 20px;
+        }
+
+        /* Result panel styling mobile */
+        .result-container {
+          min-height: 280px;
+          padding: 28px 16px 32px;
+          border-top-left-radius: 24px;
+          border-top-right-radius: 24px;
+        }
+
+        /* Result box full width */
+        .result-box {
+          width: 100%;
+          padding: 24px 20px;
+        }
+
+        /* Result value font lebih kecil */
+        .result-box h1 {
+          font-size: 30px;
+        }
+
+        /* Complete state full width */
+        .complete {
+          width: 100%;
+          padding: 4px;
+        }
+
+        /* Empty state: gambar lebih kecil */
+        .empty img,
+        .empty svg {
+          width: 160px;
+          max-width: 100%;
+        }
+
+        .empty h2 {
+          font-size: 18px;
+          margin-top: 16px;
+        }
+
+        .empty p {
+          font-size: 13px;
+          line-height: 1.6;
+          margin-top: 8px;
+        }
+
+        /* Hilangkan <br> bawaan di mobile */
+        .empty p br {
+          display: none;
+        }
+      }
+
+      /* Layar sangat kecil: ≤375px */
+      @media screen and (max-width: 375px) {
+        .left-container {
+          padding: 18px 14px;
+        }
+
+        .result-container {
+          padding: 24px 14px 28px;
+        }
+
+        .header h1 {
+          font-size: 18px;
+        }
+      }

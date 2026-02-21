@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <!-- LEFT / FORM PANEL -->
+      <section class="left-container">
+        <!-- Header -->
+        <header class="header">
+          <h1>Mortgage Calculator</h1>
+          <a href="index.html" id="clear">Clear All</a>
+        </header>
+
+        <!-- Mortgage Amount -->
+        <div class="form-group">
+          <label for="amount">Mortgage Amount</label>
+          <div class="input-group">
+            <span class="prefix">£</span>
+            <input type="number" id="amount" />
+          </div>
+              <span class="alert" id="alert1"></span>
+        </div>
+
+        <!-- Term & Interest -->
+        <div class="term-interest">
+          <div class="form-group">
+            <label for="term-amount">Mortgage Term</label>
+            <div class="input-group">
+              <input type="number" id="term-amount" />
+              <span class="suffix" id="sfx1">years</span>
+            </div>
+            <span class="alert" id="alert2"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="in-rate-amount">Interest Rate</label>
+            <div class="input-group">
+              <input type="number" id="in-rate-amount" />
+              <span class="suffix" id="sfx2">%</span>
+            </div>
+            <span class="alert" id="alert3"></span>
+          </div>
+        </div>
+
+        <!-- Mortgage Type -->
+        <fieldset class="form-group">
+          <legend class="section-label">Mortgage Type</legend>
+
+          <label class="radio-card">
+            <input type="radio" name="mortgageType" value="repayment" />
+            <span class="radio-custom"></span>
+            <span class="radio-text">Repayment</span>
+          </label>
+
+          <label class="radio-card">
+            <input type="radio" name="mortgageType" value="interest-only" />
+            <span class="radio-custom"></span>
+            <span class="radio-text">Interest Only</span>
+          </label>
+          <span class="alert" id="alert4"></span>
+        </fieldset>
+
+        <!-- Submit -->
+        <button type="submit" class="btn-primary">
+          <img src="/icon-calculator.svg" alt="" aria-hidden="true" />
+          <span>Calculate Repayments</span>
+        </button>
+      </section>
+
+      <!-- RIGHT / RESULT PANEL -->
+      <section class="result-container">
+        <!-- empty form -->
+        <div class="empty">
+          <img src="/illustration-empty.svg" alt="Calculator illustration" />
+          <h2>Results shown here</h2>
+          <p>
+            Complete the form and click
+            “calculate repayments”
+            to <br>see what your monthly repayments would be.
+          </p>
+        </div>
+
+        <!-- complete form -->
+        <div class="complete hidden">
+          <h2>Your results</h2>
+          <p>
+            Your results are shown below based on the information you provided.
+            To adjust the results, edit the form and click “calculate
+            repayments” again.
+          </p>
+
+          <div class="result-box">
+            <p id="rTop">Your monthly repayments</p>
+            <div class="result-value">
+              <h1 class="currency">£1,797.74</h1>
+              <h3 id="result-num"></h3>
+            </div>
+
+            <hr />
+
+            <p id="rBot">Total you'll repay over the term</p>
+            <div class="result-value">
+              <h3 class="total">£539,322.94</h3>
+              <h4 id="total"></h4>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="/script.js"></script>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Ridho Prasetiyo</a>.
+    </footer>
+  </body>
+</html>
